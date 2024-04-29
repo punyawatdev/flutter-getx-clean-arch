@@ -30,7 +30,7 @@ class EditTodoPage extends StatelessWidget {
           ),
         ),
         floatingActionButton: FloatingActionButton(
-          key: const Key('EditTodoPage_AddTodo_FloatingActionButton'),
+          key: const Key('EditTodoPage_AddEditTodo_FloatingActionButton'),
           onPressed: () => controller.onSubmitted(),
           child: const Icon(Icons.check_rounded),
         ),

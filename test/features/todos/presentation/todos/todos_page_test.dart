@@ -1,3 +1,5 @@
+// Flutter imports:
+
 // Package imports:
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
@@ -9,7 +11,7 @@ import 'package:flutter_getx_clean_arch/features/todos/presentation/todos/page/t
 import 'todos_controller_test.mocks.dart';
 
 void main() {
-  group('Todos Page Test', () {
+  group('TodosPage Test', () {
     late MockTodosUseCase mockTodosUseCase;
     late MockUuid mockUuid;
     late MockSnackBarMessenger mockSnackBarMessenger;
@@ -17,6 +19,7 @@ void main() {
     final currentDateTime = DateTime(2024, 4, 27);
 
     setUp(() {
+      // Create Mocks
       mockTodosUseCase = MockTodosUseCase();
       mockUuid = MockUuid();
       mockSnackBarMessenger = MockSnackBarMessenger();
@@ -33,17 +36,16 @@ void main() {
       when(mockUuid.v4()).thenReturn('mocked_uuid');
     });
 
-    testWidgets('should display todos', (WidgetTester tester) async {
+    testWidgets('should display todos page', (WidgetTester tester) async {
       // Mocking the behavior of TodosUsecase to return a list of todos
       when(mockTodosUseCase.getTodos()).thenAnswer((_) async => []);
 
       // Initialize GetX bindings
       Get.put(todosController);
-
       // Build our widget
       await tester.pumpWidget(const GetMaterialApp(home: TodosPage()));
 
-      // Expect to find the text "Todos"
+      // Expect to find the text "Flutter Todos"
       expect(find.text('Flutter Todos'), findsOneWidget);
     });
   });

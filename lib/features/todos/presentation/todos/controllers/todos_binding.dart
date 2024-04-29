@@ -1,5 +1,4 @@
 // Package imports:
-import 'package:flutter_getx_clean_arch/features/todos/presentation/todos/utils/snack_bar.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:uuid/uuid.dart';
@@ -10,6 +9,7 @@ import 'package:flutter_getx_clean_arch/features/todos/data/models/todo.dart';
 import 'package:flutter_getx_clean_arch/features/todos/data/repositories/todos_repository.dart';
 import 'package:flutter_getx_clean_arch/features/todos/domain/usecases/todos_usecase.dart';
 import 'package:flutter_getx_clean_arch/features/todos/presentation/todos/controllers/todos_controller.dart';
+import 'package:flutter_getx_clean_arch/features/todos/presentation/todos/utils/snack_bar.dart';
 
 class TodosBinding implements Bindings {
   @override

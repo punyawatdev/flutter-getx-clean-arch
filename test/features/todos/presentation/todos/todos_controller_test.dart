@@ -1,5 +1,4 @@
 // Package imports:
-import 'package:flutter_getx_clean_arch/features/todos/presentation/todos/utils/snack_bar.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
 import 'package:mockito/annotations.dart';
@@ -10,11 +9,12 @@ import 'package:uuid/uuid.dart';
 import 'package:flutter_getx_clean_arch/features/todos/domain/entities/todo.dart';
 import 'package:flutter_getx_clean_arch/features/todos/domain/usecases/todos_usecase.dart';
 import 'package:flutter_getx_clean_arch/features/todos/presentation/todos/controllers/todos_controller.dart';
+import 'package:flutter_getx_clean_arch/features/todos/presentation/todos/utils/snack_bar.dart';
 import 'todos_controller_test.mocks.dart';
 
 @GenerateMocks([TodosUseCase, Uuid, SnackBarMessenger])
 void main() {
-  group('Todos Controller Test', () {
+  group('TodosController Test', () {
     late MockTodosUseCase mockTodosUseCase;
     late MockUuid mockUuid;
     late MockSnackBarMessenger mockSnackBarMessenger;
