@@ -1,18 +1,58 @@
-# flutter-getx-clean-arch
-A basic example of a Flutter app using GetX for state management, Hive for a local database, and following a clean architecture.
+flutter-getx-clean-arch
+============================
+> A basic example of a Flutter app using GetX for state management, Hive for a local database, and following a clean architecture.
 
+### Top-level directory layout
+
+    .
+    ├── build                   # Compiled files
+    ├── assets                  # Asset files (Images, Fonts, etc.)
+    ├── android                 # android files
+    ├── ios                     # ios files
+    ├── lib                     # Source folders
+    ├── test                    # Automated tests
+    ├── pubspec.yaml            # Dependencies specify other packages that your package needs in order to work
+    └── README.md
+
+### Project directory layout
+
+Unit tests are usually placed into the `test` or, less commonly, into the `tests` folder.
+
+    ├── ...
+    ├── lib                                # Test files
+    │   ├── config                         # Config (Assets, Constants, Themes)
+    │   ├── core                           # Core (Utils, Services, Extensions)
+    │   └── features                       
+    │       ├── todos                      # Todos Features
+    │           ├── data                   # Data layer (Repositories, APIs, Database)
+    │           ├── domain                 # Domain layer (Business logic, Entities, Use cases)
+    │           └── presentation           # Presentation layer (UI, Widgets, ViewModels)
+    │               ├── home               # Home layout
+    │                   ├── controllers    # GetX controllers
+    │                   ├── pages          # Screens or Pages
+    │                   ├── widgets        # Reusable UI components
+    │                   └── ...
+    └── ...
+    
+### Unit tests
+
+Unit tests are usually placed into the `test` or, less commonly, into the `tests` folder.
+
+    ├── ...
+    ├── test                   # Test files
+    │   ├── core               # Core tests (Utils, Services, Lib)
+    │   └── features           # Features tests
+    └── ...
+    
 ### Pre-commit command
 ```
 dart run import_sorter:main bin lib test
 dart fix --apply
 flutter analyze
-```
 
-#### or command
-```
+>> or command
 dart run import_sorter:main bin lib test && dart fix --apply && flutter analyze
 ```
-
 ### Build model command by build_runner to @JsonSerializable
 ```
 dart run build_runner build --delete-conflicting-outputs
