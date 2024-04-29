@@ -16,7 +16,7 @@ flutter-getx-clean-arch
 
 ### Project directory layout
 
-Unit tests are usually placed into the `test` or, less commonly, into the `tests` folder.
+The project directory follows a modular structure inspired by Clean Architecture principles and leverages GetX for state management within the presentation layer.
 
     ├── ...
     ├── lib                                # Test files
