@@ -9,7 +9,7 @@ flutter-getx-clean-arch
     ├── assets                  # Asset files (Images, Fonts, etc.)
     ├── android                 # android files
     ├── ios                     # ios files
-    ├── lib                     # Source folders
+    ├── lib                     # Source files
     ├── test                    # Automated tests
     ├── pubspec.yaml            # Dependencies specify other packages that your package needs in order to work
     └── README.md
@@ -19,7 +19,7 @@ flutter-getx-clean-arch
 The project directory follows a modular structure inspired by Clean Architecture principles and leverages GetX for state management within the presentation layer.
 
     ├── ...
-    ├── lib                                # Test files
+    ├── lib                                # Source files
     │   ├── config                         # Config (Assets, Constants, Themes)
     │   ├── core                           # Core (Utils, Services, Extensions)
     │   └── features                       

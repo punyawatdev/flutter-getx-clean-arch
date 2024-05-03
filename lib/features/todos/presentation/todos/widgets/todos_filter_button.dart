@@ -21,14 +21,17 @@ class TodosFilterButton extends StatelessWidget {
       itemBuilder: (context) {
         return const [
           PopupMenuItem(
+            key: Key('TodosFilterButton_All'),
             value: TodosViewFilter.all,
             child: Text('All'),
           ),
           PopupMenuItem(
+            key: Key('TodosFilterButton_ActiveOnly'),
             value: TodosViewFilter.activeOnly,
             child: Text('Active Only'),
           ),
           PopupMenuItem(
+            key: Key('TodosFilterButton_CompletedOnly'),
             value: TodosViewFilter.completedOnly,
             child: Text('Completed Only'),
           ),

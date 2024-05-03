@@ -37,6 +37,7 @@ class TodosTile extends StatelessWidget {
         contentPadding: const EdgeInsets.symmetric(horizontal: 8.0),
         key: Key(todo.id),
         leading: Checkbox(
+          key: Key('TodosTile_Checkbox_${todo.id}'),
           value: todo.isCompleted,
           onChanged: onToggleCompleted,
         ),
