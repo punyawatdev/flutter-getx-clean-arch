@@ -84,7 +84,7 @@ void main() {
       // Verify that the mockTodosUseCase.addTodo is called.
       verify(mockTodosUseCase.addTodo(newTodo)).called(1);
 
-      // Delete GetX Constants.
+      // Delete GetX Instance<S>.
       Get.delete<EditTodoController>();
     });
 
@@ -147,7 +147,7 @@ void main() {
       // Verify that the mockTodosUseCase.addTodo is called.
       verify(mockTodosUseCase.updateTodo(updatedTodo)).called(1);
 
-      // Delete GetX Constants.
+      // Delete GetX Instance<S>.
       Get.delete<EditTodoController>();
     });
   });

@@ -22,11 +22,13 @@ class TodosOptionsButton extends StatelessWidget {
       itemBuilder: (context) {
         return [
           PopupMenuItem(
+            key: const Key('TodosOptionsButton_ToggleAll'),
             value: TodosViewOption.toggleAll,
             enabled: hasTodos,
             child: const Text('Mark All as completed'),
           ),
           PopupMenuItem(
+            key: const Key('TodosOptionsButton_ClearCompleted'),
             value: TodosViewOption.clearCompleted,
             enabled: hasTodos && hasCompletedTodos,
             child: const Text('Clear completed'),

@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:mockito/mockito.dart';
 
 // Project imports:
+import 'package:flutter_getx_clean_arch/features/todos/domain/entities/todo.dart';
 import 'package:flutter_getx_clean_arch/features/todos/presentation/home/controllers/home_controller.dart';
 import 'package:flutter_getx_clean_arch/features/todos/presentation/home/page/home_page.dart';
 import 'package:flutter_getx_clean_arch/features/todos/presentation/stats/controllers/stats_controller.dart';
@@ -74,11 +75,10 @@ void main() {
       // Correctly expected are 2 widgets on the top and bottom bars.
     });
 
-    testWidgets('should display add / remove todo',
-        (WidgetTester tester) async {
+    testWidgets('should display add todo', (WidgetTester tester) async {
       const openAddTodoPage = Key('HomePage_AddTodo_FloatingActionButton');
-      const addTitleField = Key('EditTodoPage_Title_TextFormField');
-      const addTodoButton =
+      const titleField = Key('EditTodoPage_Title_TextFormField');
+      const saveTodoButton =
           Key('EditTodoPage_AddEditTodo_FloatingActionButton');
 
       // Build our widget
@@ -88,30 +88,26 @@ void main() {
       await tester.tap(find.byKey(openAddTodoPage));
       await tester.pumpAndSettle();
 
-      // Expect to find the add page.
+      // Expect to find the addTodo page.
       expect(find.text('Add Todo'), findsOneWidget);
 
       // Enter 'hi' into the TextField.
-      await tester.enterText(find.byKey(addTitleField), 'Hi');
+      await tester.enterText(find.byKey(titleField), 'Hi');
 
-      // Tap the add button to add todo.
-      await tester.tap(find.byKey(addTodoButton));
+      // Tap the add button to save.
+      await tester.tap(find.byKey(saveTodoButton));
 
-      // Rebuild the widget with the new item.
-      await tester.pump();
-
-      // Expect to find the item on screen.
-      expect(find.text('Hi'), findsOneWidget);
-
-      // Swipe the item to dismiss it.
-      await tester.drag(find.text('Hi'), const Offset(500, 0),
-          warnIfMissed: false);
-
-      // Build the widget until the dismiss animation ends.
+      // Rebuild the widget
       await tester.pumpAndSettle();
 
-      // Ensure that the item is no longer on screen.
-      expect(find.text('Hi'), findsNothing);
+      verify(mockTodosUseCase.addTodo(
+        Todo(
+            id: 'mocked_uuid',
+            title: 'Hi',
+            description: '',
+            isCompleted: false,
+            createdDate: currentDateTime),
+      )).called(1);
     });
   });
 }

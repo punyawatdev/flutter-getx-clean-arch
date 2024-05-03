@@ -16,6 +16,7 @@ class TodosPage extends GetView<TodosController> {
   Widget build(BuildContext context) {
     final todosFilter = Obx(
       () => TodosFilterButton(
+        key: const Key('TodosPage_TodosFilterButton'),
         initialValue: controller.filter.value,
         onSelected: (filter) {
           controller.onFilterChanged(filter);
@@ -24,6 +25,7 @@ class TodosPage extends GetView<TodosController> {
     );
     final todosOptions = Obx(
       () => TodosOptionsButton(
+        key: const Key('TodosPage_TodosOptionsButton'),
         hasTodos: controller.hasTodos.value,
         hasCompletedTodos: controller.hasCompletedTodos.value,
         onSelected: (options) {
