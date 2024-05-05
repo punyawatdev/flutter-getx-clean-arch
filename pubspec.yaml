@@ -41,6 +41,8 @@ dependencies:
   # database
   hive: ^2.2.3
   hive_flutter: ^1.1.0
+  # local storage
+  shared_preferences: ^2.2.2
   # network
   dio: ^5.4.0
   # others
@@ -49,7 +51,6 @@ dependencies:
   equatable: ^2.0.5
   path_provider: ^2.1.1
   path: ^1.8.3
-  clock: ^1.1.1
   # mockup data
   mockito: ^5.4.3
 
