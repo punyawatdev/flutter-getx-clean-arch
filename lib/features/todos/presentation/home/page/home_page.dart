@@ -44,12 +44,7 @@ class HomePage extends GetView<HomeController> {
         builder: (tab) => NavigationBar(
           labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
           selectedIndex: tab.pageIndex,
-          onDestinationSelected: (int index) {
-            if (index == 1) {
-              Get.find<StatsController>().getStatsTodos();
-            }
-            controller.setPage(index);
-          },
+          onDestinationSelected: (int index) => controller.setPage(index),
           destinations: const [
             NavigationDestination(
               icon: Icon(Icons.list),
