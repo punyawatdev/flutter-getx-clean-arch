@@ -1,5 +1,4 @@
 // Package imports:
-import 'package:flutter_getx_clean_arch/features/todos/presentation/todos/controllers/todos_controller.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
 import 'package:mockito/mockito.dart';
@@ -7,6 +6,7 @@ import 'package:mockito/mockito.dart';
 // Project imports:
 import 'package:flutter_getx_clean_arch/features/todos/domain/entities/todo.dart';
 import 'package:flutter_getx_clean_arch/features/todos/presentation/stats/controllers/stats_controller.dart';
+import 'package:flutter_getx_clean_arch/features/todos/presentation/todos/controllers/todos_controller.dart';
 import '../todos/todos_controller_test.mocks.dart';
 
 void main() {

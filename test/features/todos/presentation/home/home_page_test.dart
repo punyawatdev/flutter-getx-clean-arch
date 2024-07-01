@@ -39,7 +39,7 @@ void main() {
     // Create a HomeController
     homeController = HomeController();
     // Create a StatsController
-    statsController = StatsController(todosUseCase: mockTodosUseCase);
+    statsController = StatsController(todoController: todosController);
 
     // Mocking the UUID generation
     when(mockUuid.v4()).thenReturn('mocked_uuid');
