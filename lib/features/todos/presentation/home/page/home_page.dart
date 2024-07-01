@@ -7,7 +7,6 @@ import 'package:get/get.dart';
 // Project imports:
 import 'package:flutter_getx_clean_arch/features/todos/presentation/edit_todo/page/edit_todo_page.dart';
 import 'package:flutter_getx_clean_arch/features/todos/presentation/home/controllers/home_controller.dart';
-import 'package:flutter_getx_clean_arch/features/todos/presentation/stats/controllers/stats_controller.dart';
 import 'package:flutter_getx_clean_arch/features/todos/presentation/stats/page/stats_page.dart';
 import 'package:flutter_getx_clean_arch/features/todos/presentation/todos/page/todos_page.dart';
 

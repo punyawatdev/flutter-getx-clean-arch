@@ -735,10 +735,15 @@ class MockSnackBarMessenger extends _i1.Mock implements _i12.SnackBarMessenger {
 
   @override
   _i3.ScaffoldFeatureController<_i3.SnackBar, _i3.SnackBarClosedReason>
-      showSnackBar(_i3.SnackBar? snackBar) => (super.noSuchMethod(
+      showSnackBar(
+    _i3.SnackBar? snackBar, {
+    _i3.AnimationStyle? snackBarAnimationStyle,
+  }) =>
+          (super.noSuchMethod(
             Invocation.method(
               #showSnackBar,
               [snackBar],
+              {#snackBarAnimationStyle: snackBarAnimationStyle},
             ),
             returnValue: _FakeScaffoldFeatureController_3<_i3.SnackBar,
                 _i3.SnackBarClosedReason>(
@@ -746,6 +751,7 @@ class MockSnackBarMessenger extends _i1.Mock implements _i12.SnackBarMessenger {
               Invocation.method(
                 #showSnackBar,
                 [snackBar],
+                {#snackBarAnimationStyle: snackBarAnimationStyle},
               ),
             ),
           ) as _i3.ScaffoldFeatureController<_i3.SnackBar,
