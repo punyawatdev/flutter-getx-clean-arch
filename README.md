@@ -34,7 +34,7 @@ The project directory follows a modular structure inspired by Clean Architecture
     │                   └── ...
     └── ...
     
-### Unit tests directory
+### Unit tests directory layout
 
 Unit tests are usually placed into the `test` or, less commonly, into the `tests` folder.
 
